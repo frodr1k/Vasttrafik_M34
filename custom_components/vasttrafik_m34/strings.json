@@ -1,0 +1,46 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Västtrafik M34 Setup",
+        "description": "Enter your Authentication Key from [developer.vasttrafik.se]({auth_key_url}). Find it in your application under 'Autentiseringsnyckel' (base64 encoded client_id:client_secret).",
+        "data": {
+          "auth_key": "Authentication Key"
+        },
+        "data_description": {
+          "auth_key": "The base64-encoded authentication key from your Västtrafik developer application. It combines your client_id and client_secret."
+        }
+      },
+      "station": {
+        "title": "Search for Station",
+        "description": "Search for your stop/station. Partial names work - try 'Central', 'Brunnsparken', or any part of the name.",
+        "data": {
+          "station_name": "Station/Stop"
+        },
+        "data_description": {
+          "station_name": "Enter part of the station name (e.g., 'Central' finds 'Centralstationen')"
+        }
+      },
+      "select_station": {
+        "title": "Select Station",
+        "description": "Select your station from the search results below.",
+        "data": {
+          "station": "Station"
+        },
+        "data_description": {
+          "station": "Choose the station you want to monitor for departures."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Västtrafik API. Check your internet connection.",
+      "invalid_auth": "Invalid authentication key. Verify you copied the full key from developer.vasttrafik.se.",
+      "no_stations_found": "No stations found. Try a different search term or check spelling.",
+      "invalid_station": "Invalid station selected. Please try again.",
+      "unknown": "Unexpected error occurred. Check Home Assistant logs for details."
+    },
+    "abort": {
+      "already_configured": "This station is already configured. Choose a different station or remove the existing one first."
+    }
+  }
+}

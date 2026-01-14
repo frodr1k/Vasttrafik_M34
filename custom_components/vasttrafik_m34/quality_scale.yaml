@@ -1,0 +1,87 @@
+# Integration Quality Scale Status
+# This file tracks which quality scale rules have been implemented
+
+rules:
+  # Bronze tier rules
+  action-setup:
+    status: exempt
+    comment: This integration does not provide service actions, only sensors for monitoring departures
+  
+  appropriate-polling:
+    status: done
+    comment: Polling interval set to 60 seconds (SCAN_INTERVAL = timedelta(minutes=1)) in sensor.py
+  
+  brands:
+    status: done
+    comment: |
+      Icon (icon.png) and logo (logo.png) created in custom_components/vasttrafik_m34/icons/
+      Based on Västtrafik official logo with "M34" text in orange.
+      Assets available for local use and ready for submission to home-assistant/brands repository.
+      See BRANDING_ASSETS_GUIDE.md for complete instructions.
+  
+  common-modules:
+    status: done
+    comment: Common patterns isolated in const.py, config flow patterns in config_flow.py
+  
+  config-flow-test-coverage:
+    status: done
+    comment: Config flow tests in tests/test_basic.py verify strings.json structure and field names
+  
+  config-flow:
+    status: done
+    comment: |
+      - Full GUI configuration via config flow
+      - Uses data_description in strings.json for all fields
+      - Correctly uses ConfigEntry.data for persistent configuration
+      - Three-step flow: auth-key → station search → station selection
+  
+  dependency-transparency:
+    status: done
+    comment: Only dependency is aiohttp>=3.8.0 from PyPI with public CI pipeline
+  
+  docs-actions:
+    status: exempt
+    comment: This integration does not provide service actions
+  
+  docs-high-level-description:
+    status: done
+    comment: README.md includes description of Västtrafik as public transport provider in Gothenburg
+  
+  docs-installation-instructions:
+    status: done
+    comment: README.md provides step-by-step installation instructions via HACS and manual installation
+  
+  docs-removal-instructions:
+    status: done
+    comment: README.md includes removal instructions in the documentation
+  
+  entity-event-setup:
+    status: exempt
+    comment: This integration uses DataUpdateCoordinator, not event subscriptions
+  
+  entity-unique-id:
+    status: done
+    comment: Entities use unique_id format "vasttrafik_{station_gid}" in sensor.py line 236
+  
+  has-entity-name:
+    status: done
+    comment: Sensor uses _attr_has_entity_name = True and _attr_name = None in sensor.py line 221-222
+  
+  runtime-data:
+    status: done
+    comment: |
+      Coordinator stored in ConfigEntry.runtime_data in sensor.py line 52
+      Type alias VasttrafikConfigEntry = ConfigEntry[VasttrafikDataUpdateCoordinator] in __init__.py line 23
+      Used throughout __init__.py and sensor.py for type safety
+  
+  test-before-configure:
+    status: done
+    comment: Config flow validates auth-key by testing OAuth2 token retrieval before allowing continuation
+  
+  test-before-setup:
+    status: done
+    comment: __init__.py tests OAuth2 authentication before forwarding to platforms, raises ConfigEntryNotReady on failure
+  
+  unique-config-entry:
+    status: done
+    comment: Config flow uses async_set_unique_id and _abort_if_unique_id_configured to prevent duplicate stations

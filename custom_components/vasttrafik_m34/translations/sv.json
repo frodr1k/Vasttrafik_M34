@@ -1,0 +1,46 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Västtrafik M34 Konfiguration",
+        "description": "Ange din Autentiseringsnyckel från [developer.vasttrafik.se]({auth_key_url}). Du hittar den i din applikation under 'Autentiseringsnyckel' (base64-kodad client_id:client_secret).",
+        "data": {
+          "auth_key": "Autentiseringsnyckel"
+        },
+        "data_description": {
+          "auth_key": "Den base64-kodade autentiseringsnyckeln från din Västtrafik-utvecklarapplikation. Den kombinerar ditt client_id och client_secret."
+        }
+      },
+      "station": {
+        "title": "Sök Hållplats",
+        "description": "Sök efter din hållplats. Delar av namnet fungerar - prova 'Central', 'Brunnsparken' eller valfri del av namnet.",
+        "data": {
+          "station_name": "Hållplats/Station"
+        },
+        "data_description": {
+          "station_name": "Ange del av hållplatsnamnet (t.ex. 'Central' hittar 'Centralstationen')"
+        }
+      },
+      "select_station": {
+        "title": "Välj Hållplats",
+        "description": "Välj din hållplats från sökresultaten nedan.",
+        "data": {
+          "station": "Hållplats"
+        },
+        "data_description": {
+          "station": "Välj den hållplats du vill övervaka avgångar från."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunde inte ansluta till Västtrafiks API. Kontrollera din internetanslutning.",
+      "invalid_auth": "Ogiltig autentiseringsnyckel. Verifiera att du kopierat hela nyckeln från developer.vasttrafik.se.",
+      "no_stations_found": "Inga hållplatser hittades. Försök med ett annat sökord eller kontrollera stavningen.",
+      "invalid_station": "Ogiltig hållplats vald. Försök igen.",
+      "unknown": "Ett oväntat fel inträffade. Kontrollera Home Assistant-loggarna för detaljer."
+    },
+    "abort": {
+      "already_configured": "Denna hållplats är redan konfigurerad. Välj en annan hållplats eller ta bort den befintliga först."
+    }
+  }
+}

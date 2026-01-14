@@ -1,0 +1,14 @@
+{
+  "domain": "vasttrafik_m34",
+  "name": "Västtrafik M34",
+  "codeowners": ["@frodr1k"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/frodr1k/Vasttrafik_M34",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/frodr1k/Vasttrafik_M34/issues",
+  "quality_scale": "bronze",
+  "requirements": ["aiohttp>=3.8.0"],
+  "version": "1.0.0"
+}
