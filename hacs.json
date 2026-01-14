@@ -1,5 +1,6 @@
 {
   "name": "Västtrafik M34",
+  "country": ["SE"],
   "content_in_root": false,
   "filename": "vasttrafik_m34",
   "render_readme": true,
